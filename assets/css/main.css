@@ -1,0 +1,135 @@
+/* Colors */
+:root {
+  /* ### Primary */
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  /* ### Neutral */
+
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--light-grayish-blue);
+  padding: 0;
+  margin: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+}
+.testimonials {
+  display: grid;
+  grid-template-areas:
+    "one one two sidebar"
+    "three four four sidebar";
+  gap: 1rem;
+  max-width: 1100px;
+  height: 100vh;
+  margin: 2rem auto 4rem;
+}
+
+.card img{
+  width: 10%;
+    border-radius: 50%;
+}
+
+.card h4{
+    color: var(--light-grayish-blue);
+    font-weight: normal;
+}
+.card h5{
+    color: hsla(210, 46%, 95%, 50%);
+}
+.card p{
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.card p small{
+    color: hsla(210, 46%, 95%, 70%);
+}
+
+.top{
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.one {
+  grid-area: one;
+  background: var(--moderate-violet) url(../images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.two {
+  grid-area: two;
+  background-color: var(--very-dark-grayish-blue);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.three {
+  grid-area: three;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.four {
+  grid-area: four;
+  background-color: var(--very-dark-blackish-blue);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+@media (max-width: 850px) {
+  .testimonials {
+    grid-template-areas:
+      "one two"
+      "sidebar sidebar"
+      "three four";
+    margin: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .testimonials {
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "sidebar";
+    margin: 2rem;
+  }
+}
